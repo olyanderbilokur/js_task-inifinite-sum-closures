@@ -3,11 +3,11 @@
 /***
  * @return {function}
  */
-function makeInfinityAdder() {
+function makeAdder() {
   // write code here
   let sum = 0;
 
-  function makeAdder(...arg) {
+  function adder(...arg) {
     if (arg.length === 0) {
       const result = sum;
 
@@ -18,10 +18,10 @@ function makeInfinityAdder() {
 
     sum = arg.reduce((acc, num) => acc + num, sum);
 
-    return makeAdder;
+    return adder;
   }
 
-  return makeAdder;
+  return adder;
 }
 
-module.exports = makeInfinityAdder;
+module.exports = makeAdder;
